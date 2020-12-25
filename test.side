@@ -50,7 +50,7 @@
       "id": "1ea317c6-084b-4a99-b60a-8333a9defbfb",
       "comment": "",
       "command": "click",
-      "target": "css=.row:nth-child(1) > .col-md-4",
+      "target": "xpath=//form/div/div",
       "targets": [
         ["css=.row:nth-child(1) > .col-md-4", "css:finder"],
         ["xpath=//form/div/div", "xpath:position"]
@@ -60,7 +60,7 @@
       "id": "d1e7c315-fae7-45d1-b1ea-61ded7b925c5",
       "comment": "",
       "command": "click",
-      "target": "css=form",
+      "target": "xpath=//form",
       "targets": [
         ["css=form", "css:finder"],
         ["xpath=//form[@action='/Account/Login?ReturnUrl=%2F']", "xpath:attributes"],
@@ -71,7 +71,7 @@
       "id": "fce5a0e0-0a05-4f51-9241-21d944530699",
       "comment": "",
       "command": "click",
-      "target": "css=html",
+      "target": "xpath=//html",
       "targets": [
         ["css=html", "css:finder"],
         ["xpath=//html", "xpath:position"]
@@ -81,7 +81,7 @@
       "id": "5f9d71b3-5c00-4ff5-9a07-f2fe38967f47",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//input[@type='submit']",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//input[@type='submit']", "xpath:attributes"],
@@ -121,7 +121,7 @@
       "id": "34843d9d-4514-47be-a26f-7d00dddd0055",
       "comment": "",
       "command": "click",
-      "target": "css=.container-fluid:nth-child(3) > div:nth-child(1) > a",
+      "target": "xpath=//div[2]/div/a",
       "targets": [
         ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
         ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
@@ -133,7 +133,7 @@
       "id": "ea049e80-5bbe-4841-ab40-d87d13c44f9e",
       "comment": "",
       "command": "click",
-      "target": "linkText=Create new",
+      "target": "xpath=//div[2]/a",
       "targets": [
         ["linkText=Create new", "linkText"],
         ["css=.btn", "css:finder"],
@@ -371,7 +371,7 @@
       "id": "16225f0f-badc-4d1f-99d5-133abdd42ac5",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//form/input",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//input[@type='submit']", "xpath:attributes"],
@@ -414,7 +414,7 @@
       "id": "6e19d27b-e555-4e5f-8444-ab60272eb648",
       "comment": "",
       "command": "click",
-      "target": "css=.container-fluid:nth-child(3) > div:nth-child(1) > a",
+      "target": "xpath=//div[2]/div/a",
       "targets": [
         ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
         ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
@@ -426,7 +426,7 @@
       "id": "4ab3a37b-5ba2-4a29-8d35-ef406bf5d2df",
       "comment": "",
       "command": "click",
-      "target": "linkText=cook",
+      "target": "xpath=//tr[79]/td[2]/a",
       "targets": [
         ["linkText=cook", "linkText"],
         ["css=tr:nth-child(79) > td:nth-child(2) > a", "css:finder"],
@@ -444,6 +444,48 @@
       "targets": [],
       "value": "cook"
     }, {
+      "id": "9c62ec0b-29cd-4c18-aaee-0d857d5260cc",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "//input[contains(@name,\"ProductName\")]",
+      "targets": [],
+      "value": "cook"
+    }, {
+      "id": "1b8e3840-3a0a-4eeb-a418-62877e710ed8",
+      "comment": "",
+      "command": "waitForElementEditable",
+      "target": "//select[@name=\"CategoryId\"] // option[text()=\"Seafood\"]",
+      "targets": [
+        ["id=CategoryId", "id"],
+        ["name=CategoryId", "name"],
+        ["css=#CategoryId", "css:finder"],
+        ["xpath=//select[@id='CategoryId']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Beverages\nCondiments\nConfections\nDairy Products\nGrains/Cereals\nMeat/Poultry\nProduce\nSeafood')]", "xpath:innerText"]
+      ],
+      "value": "Seafood"
+    }, {
+      "id": "d7c6f7c0-a51e-40a8-bb11-f85de93c8b1b",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "//select[@name=\"CategoryId\"] // option[text()=\"Seafood\"]",
+      "targets": [],
+      "value": "8"
+    }, {
+      "id": "bbac5192-31b2-4e6c-839b-35c1da2215ec",
+      "comment": "",
+      "command": "waitForElementEditable",
+      "target": "//select[@name=\"SupplierId\"] // option[text()=\"Pavlova, Ltd.\"]",
+      "targets": [],
+      "value": "Pavlova, Ltd."
+    }, {
+      "id": "0fa34322-47a2-4bcf-bb48-a35560b4de22",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "//select[@name=\"SupplierId\"] // option[text()=\"Pavlova, Ltd.\"]",
+      "targets": [],
+      "value": "7"
+    }, {
       "id": "15e8cb65-6161-4ec6-a12a-1c5403b3ab47",
       "comment": "",
       "command": "waitForElementEditable",
@@ -452,12 +494,33 @@
         ["css=.row:nth-child(6) > .col-md-4", "css:finder"],
         ["xpath=//form/div[6]/div", "xpath:position"]
       ],
+      "value": "1000,0000"
+    }, {
+      "id": "f7fddf0e-84eb-4b59-b60b-4e54ffbec6fb",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "//input[contains(@name,\"UnitPrice\")]",
+      "targets": [],
+      "value": "1000,0000"
+    }, {
+      "id": "ada242e9-0f34-4a43-9f8c-74e02fd64685",
+      "comment": "",
+      "command": "waitForElementEditable",
+      "target": "//input[@name=\"QuantityPerUnit\"] ",
+      "targets": [],
+      "value": "100"
+    }, {
+      "id": "fc5abb9c-054e-4bf8-9bf0-4c25c86a7f0e",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "//input[@name=\"QuantityPerUnit\"] ",
+      "targets": [],
       "value": "100"
     }, {
       "id": "6b5058ed-f21f-4878-8525-019e1f9833d8",
       "comment": "",
       "command": "waitForElementEditable",
-      "target": "xpath=//div[7]/div/input",
+      "target": "//input[@name=\"UnitsInStock\"] ",
       "targets": [
         ["id=UnitsInStock", "id"],
         ["name=UnitsInStock", "name"],
@@ -467,10 +530,17 @@
       ],
       "value": "20"
     }, {
+      "id": "6ac83b47-8b0a-44cc-8c65-9044712cde3b",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "//input[@name=\"UnitsInStock\"] ",
+      "targets": [],
+      "value": "20"
+    }, {
       "id": "795f4ff0-35a4-4dce-9e74-8b67cbf6f159",
       "comment": "",
       "command": "waitForElementEditable",
-      "target": "xpath=//div[8]/div/input",
+      "target": "//input[@name=\"UnitsOnOrder\"] ",
       "targets": [
         ["id=UnitsOnOrder", "id"],
         ["name=UnitsOnOrder", "name"],
@@ -480,10 +550,17 @@
       ],
       "value": "80"
     }, {
+      "id": "2a09b09a-629b-4f18-9f08-4f249e414e3e",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "//input[@name=\"UnitsOnOrder\"] ",
+      "targets": [],
+      "value": "80"
+    }, {
       "id": "a5a19c42-9956-4b5e-a6ae-7404371abc5f",
       "comment": "",
       "command": "waitForElementEditable",
-      "target": "xpath=//div[9]/div/input",
+      "target": "//input[@name=\"ReorderLevel\"] ",
       "targets": [
         ["id=ReorderLevel", "id"],
         ["name=ReorderLevel", "name"],
@@ -491,6 +568,13 @@
         ["xpath=//input[@id='ReorderLevel']", "xpath:attributes"],
         ["xpath=//div[9]/div/input", "xpath:position"]
       ],
+      "value": "1"
+    }, {
+      "id": "a5752694-55e3-4c3d-9e52-cf8c9ca5465e",
+      "comment": "",
+      "command": "verifyValue",
+      "target": "//input[@name=\"ReorderLevel\"] ",
+      "targets": [],
       "value": "1"
     }]
   }, {
@@ -514,7 +598,7 @@
       "id": "b34725b1-6887-489f-acf4-baf928e26dd9",
       "comment": "",
       "command": "click",
-      "target": "linkText=Logout",
+      "target": "xpath=//li[4]/a",
       "targets": [
         ["linkText=Logout", "linkText"],
         ["css=li:nth-child(4) > a", "css:finder"],
@@ -555,7 +639,7 @@
       "id": "283ed35e-4f60-4a4d-b16a-f4cded6c1122",
       "comment": "",
       "command": "assertText",
-      "target": "css=h2",
+      "target": "xpath=//h2[contains(.,'Login')]",
       "targets": [
         ["css=h2", "css:finder"],
         ["xpath=//h2", "xpath:position"],
