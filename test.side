@@ -92,7 +92,7 @@
       "id": "1e50224f-14dc-474f-80fa-f7098072cd10",
       "comment": "check",
       "command": "assertText",
-      "target": "xpath=//h2",
+      "target": "xpath=//h2[contains(.,'Home page')]",
       "targets": [
         ["css=h2", "css:finder"],
         ["xpath=//h2", "xpath:position"],
@@ -121,7 +121,7 @@
       "id": "34843d9d-4514-47be-a26f-7d00dddd0055",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[2]/div/a",
+      "target": "xpath=(//a[contains(@href, '/Product')])[2]",
       "targets": [
         ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
         ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
@@ -133,7 +133,7 @@
       "id": "ea049e80-5bbe-4841-ab40-d87d13c44f9e",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[2]/a",
+      "target": "xpath=//a[contains(text(),'Create new')]",
       "targets": [
         ["linkText=Create new", "linkText"],
         ["css=.btn", "css:finder"],
@@ -382,7 +382,7 @@
       "id": "d2b39401-47ac-4557-86d5-1ba58371500e",
       "comment": "",
       "command": "assertText",
-      "target": "linkText=cook",
+      "target": "xpath=//a[contains(text(),'cook')]",
       "targets": [
         ["linkText=cook", "linkText"],
         ["css=tr:nth-child(79) > td:nth-child(2) > a", "css:finder"],
@@ -414,7 +414,7 @@
       "id": "6e19d27b-e555-4e5f-8444-ab60272eb648",
       "comment": "",
       "command": "click",
-      "target": "xpath=//div[2]/div/a",
+      "target": "xpath=(//a[contains(@href, '/Product')])[2]",
       "targets": [
         ["css=.container-fluid:nth-child(3) > div:nth-child(1) > a", "css:finder"],
         ["xpath=(//a[contains(text(),'All Products')])[2]", "xpath:link"],
@@ -426,7 +426,7 @@
       "id": "4ab3a37b-5ba2-4a29-8d35-ef406bf5d2df",
       "comment": "",
       "command": "click",
-      "target": "xpath=//tr[79]/td[2]/a",
+      "target": "xpath=//a[contains(.,'cook')]",
       "targets": [
         ["linkText=cook", "linkText"],
         ["css=tr:nth-child(79) > td:nth-child(2) > a", "css:finder"],
@@ -440,9 +440,9 @@
       "id": "4e90f32b-f273-4c7c-a513-a0c93b07df1b",
       "comment": "",
       "command": "waitForElementEditable",
-      "target": "//input[contains(@name,\"ProductName\")]",
+      "target": "//input[@name=\"ReorderLevel\"] ",
       "targets": [],
-      "value": "cook"
+      "value": "1"
     }, {
       "id": "9c62ec0b-29cd-4c18-aaee-0d857d5260cc",
       "comment": "",
@@ -451,33 +451,12 @@
       "targets": [],
       "value": "cook"
     }, {
-      "id": "1b8e3840-3a0a-4eeb-a418-62877e710ed8",
-      "comment": "",
-      "command": "waitForElementEditable",
-      "target": "//select[@name=\"CategoryId\"] // option[text()=\"Seafood\"]",
-      "targets": [
-        ["id=CategoryId", "id"],
-        ["name=CategoryId", "name"],
-        ["css=#CategoryId", "css:finder"],
-        ["xpath=//select[@id='CategoryId']", "xpath:attributes"],
-        ["xpath=//select", "xpath:position"],
-        ["xpath=//select[contains(.,'Beverages\nCondiments\nConfections\nDairy Products\nGrains/Cereals\nMeat/Poultry\nProduce\nSeafood')]", "xpath:innerText"]
-      ],
-      "value": "Seafood"
-    }, {
       "id": "d7c6f7c0-a51e-40a8-bb11-f85de93c8b1b",
       "comment": "",
       "command": "verifyValue",
       "target": "//select[@name=\"CategoryId\"] // option[text()=\"Seafood\"]",
       "targets": [],
       "value": "8"
-    }, {
-      "id": "bbac5192-31b2-4e6c-839b-35c1da2215ec",
-      "comment": "",
-      "command": "waitForElementEditable",
-      "target": "//select[@name=\"SupplierId\"] // option[text()=\"Pavlova, Ltd.\"]",
-      "targets": [],
-      "value": "Pavlova, Ltd."
     }, {
       "id": "0fa34322-47a2-4bcf-bb48-a35560b4de22",
       "comment": "",
@@ -486,29 +465,12 @@
       "targets": [],
       "value": "7"
     }, {
-      "id": "15e8cb65-6161-4ec6-a12a-1c5403b3ab47",
-      "comment": "",
-      "command": "waitForElementEditable",
-      "target": "//input[contains(@name,\"UnitPrice\")]",
-      "targets": [
-        ["css=.row:nth-child(6) > .col-md-4", "css:finder"],
-        ["xpath=//form/div[6]/div", "xpath:position"]
-      ],
-      "value": "1000,0000"
-    }, {
       "id": "f7fddf0e-84eb-4b59-b60b-4e54ffbec6fb",
       "comment": "",
       "command": "verifyValue",
       "target": "//input[contains(@name,\"UnitPrice\")]",
       "targets": [],
       "value": "1000,0000"
-    }, {
-      "id": "ada242e9-0f34-4a43-9f8c-74e02fd64685",
-      "comment": "",
-      "command": "waitForElementEditable",
-      "target": "//input[@name=\"QuantityPerUnit\"] ",
-      "targets": [],
-      "value": "100"
     }, {
       "id": "fc5abb9c-054e-4bf8-9bf0-4c25c86a7f0e",
       "comment": "",
@@ -517,19 +479,6 @@
       "targets": [],
       "value": "100"
     }, {
-      "id": "6b5058ed-f21f-4878-8525-019e1f9833d8",
-      "comment": "",
-      "command": "waitForElementEditable",
-      "target": "//input[@name=\"UnitsInStock\"] ",
-      "targets": [
-        ["id=UnitsInStock", "id"],
-        ["name=UnitsInStock", "name"],
-        ["css=#UnitsInStock", "css:finder"],
-        ["xpath=//input[@id='UnitsInStock']", "xpath:attributes"],
-        ["xpath=//div[7]/div/input", "xpath:position"]
-      ],
-      "value": "20"
-    }, {
       "id": "6ac83b47-8b0a-44cc-8c65-9044712cde3b",
       "comment": "",
       "command": "verifyValue",
@@ -537,38 +486,12 @@
       "targets": [],
       "value": "20"
     }, {
-      "id": "795f4ff0-35a4-4dce-9e74-8b67cbf6f159",
-      "comment": "",
-      "command": "waitForElementEditable",
-      "target": "//input[@name=\"UnitsOnOrder\"] ",
-      "targets": [
-        ["id=UnitsOnOrder", "id"],
-        ["name=UnitsOnOrder", "name"],
-        ["css=#UnitsOnOrder", "css:finder"],
-        ["xpath=//input[@id='UnitsOnOrder']", "xpath:attributes"],
-        ["xpath=//div[8]/div/input", "xpath:position"]
-      ],
-      "value": "80"
-    }, {
       "id": "2a09b09a-629b-4f18-9f08-4f249e414e3e",
       "comment": "",
       "command": "verifyValue",
       "target": "//input[@name=\"UnitsOnOrder\"] ",
       "targets": [],
       "value": "80"
-    }, {
-      "id": "a5a19c42-9956-4b5e-a6ae-7404371abc5f",
-      "comment": "",
-      "command": "waitForElementEditable",
-      "target": "//input[@name=\"ReorderLevel\"] ",
-      "targets": [
-        ["id=ReorderLevel", "id"],
-        ["name=ReorderLevel", "name"],
-        ["css=#ReorderLevel", "css:finder"],
-        ["xpath=//input[@id='ReorderLevel']", "xpath:attributes"],
-        ["xpath=//div[9]/div/input", "xpath:position"]
-      ],
-      "value": "1"
     }, {
       "id": "a5752694-55e3-4c3d-9e52-cf8c9ca5465e",
       "comment": "",
@@ -598,7 +521,7 @@
       "id": "b34725b1-6887-489f-acf4-baf928e26dd9",
       "comment": "",
       "command": "click",
-      "target": "xpath=//li[4]/a",
+      "target": "xpath=//a[contains(text(),'Logout')]",
       "targets": [
         ["linkText=Logout", "linkText"],
         ["css=li:nth-child(4) > a", "css:finder"],
